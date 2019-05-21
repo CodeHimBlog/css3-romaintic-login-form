@@ -7,12 +7,13 @@
 
 body {
 	font-family: 'Montserrat', sans-serif;
-	background: #19092b;
-	color: rgba(255, 255, 255, 0.90);
+	
 }
 
 .cm-login {
 	margin-top: 20px;
+	background: #19092b;
+	color: rgba(255, 255, 255, 0.90);
 }
 
 .cm-login-form {
