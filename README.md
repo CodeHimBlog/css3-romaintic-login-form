@@ -1,2 +1,4 @@
 # css3-romaintic-login-form
-CSS3 Glass like login form design.
+CSS3 animated login form design. 
+<br>
+[Demo](https://codehimblog.github.io/css3-romaintic-login-form/)
