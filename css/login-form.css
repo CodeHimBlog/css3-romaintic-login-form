@@ -207,7 +207,7 @@ a.lost-pass {
 /* Responsive PC view*/
 
 @media only screen and (min-width: 480px) {
-	body {
+	.cm-login  {
 		background: url('../img/couple.jpg') no-repeat;
 		background-size: cover;
 	}
