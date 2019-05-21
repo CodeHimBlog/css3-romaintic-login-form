@@ -211,6 +211,7 @@ a.lost-pass {
 	.cm-login  {
 		background: url('../img/couple.jpg') no-repeat;
 		background-size: cover;
+		min-height: 500px;
 	}
 	.cm-login-form {
 		position: absolute;
