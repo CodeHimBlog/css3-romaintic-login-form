@@ -10,6 +10,8 @@
       <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
       <!-- Login Form CSS -->
       <link rel="stylesheet" href="css/login-form.css">
+      <!-- Demo CSS -->
+      <link rel="stylesheet" href="css/demo.css">
    </head>
    <body>
       <section class="cm-login">
@@ -33,5 +35,290 @@
          </form>
       </section>
       <div class="dim-overlay"></div>
+                  
+                  <main class="code">
+                     <article>
+                        <h1> CSS3 Login Form Design</h1>
+                        
+                        <h2>Login Form HTML Code </h2>
+                        <pre class="prettyprint lang-html">
+      &lt;section class="cm-login"&gt;
+         &lt;form class="cm-login-form"&gt;
+            &lt;input type="email" name="cm-email" class="cm-text-input" placeholder="Email"&gt;
+            &lt;input type="password" name="cm-password" class="cm-text-input" placeholder="Password"&gt;
+            &lt;div class="remember-me"&gt;
+               &lt;input type="checkbox" name="checkbox" class="cm-toggle" /&gt; Remember Me 
+            &lt;/div&gt;
+            &lt;button type="submit" class="cm-submit"&gt; Log in &lt;/button&gt;
+            &lt;a class="lost-pass" href="#lost-password"&gt;
+            &lt;i class="fa fa-frown-o"&gt;&lt;/i&gt;
+            I have lost my password &lt;/a&gt;
+            &lt;div class="social-login"&gt;
+               &lt;h4&gt; Social Login &lt;/h4&gt;
+               &lt;p&gt; Login using your social media profile. &lt;/p&gt;
+               &lt;a class="cm-btn btn-fb" href="#fb"&gt; Facebook&lt;a&gt;
+               &lt;a class="cm-btn btn-lk" href="#lk"&gt; LinkedIn&lt;a&gt;
+               &lt;a class="cm-btn btn-tw" href="#tw"&gt; Twitter&lt;a&gt;
+            &lt;/div&gt;
+         &lt;/form&gt;
+      &lt;/section&gt;
+      &lt;div class="dim-overlay"&gt;&lt;/div&gt;
+</pre>
+                        <h2> Login Form CSS Code</h2>
+                        
+                        <pre class="prettyprint lang-css">
+/*! Author: Asif Mughal (www.codehim.com) */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: #19092b;
+	color: rgba(255, 255, 255, 0.90);
+}
+
+.cm-login {
+	margin-top: 20px;
+}
+
+.cm-login-form {
+	user-select: none;
+	-webkit-user-select: none;
+	padding: 20px;
+}
+
+.cm-login-form .cm-text-input {
+	background: rgba(255, 255, 255, 0.5);
+	padding: 10px;
+	display: black;
+	width: 100%;
+	border: 0;
+	outline: 0;
+	border-radius: 16px;
+	margin: 15px 0;
+}
+
+.cm-text-input::placeholder {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.cm-login-form .fa {
+	color: rgba(255, 255, 255, 0.45);
+}
+
+.remember-me,
+a.lost-pass {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.75);
+	display: block;
+	margin: 10px 0;
+}
+
+.social-login {
+	text-align: center;
+	margin-top: 30px;
+	color: rgba(255, 255, 255, 0.75);
+}
+
+.social-login p {
+	margin: 10px;
+	font-size: 13px;
+	text-align: left;
+}
+
+
+/* Social Buttons */
+
+.cm-btn {
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px;
+	border-radius: 2px;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-fb {
+	background: #3b5998
+}
+
+.btn-tw {
+	background: #00acee
+}
+
+.btn-lk {
+	background: #0077B5
+}
+
+.btn-fb:before,
+.btn-tw:before,
+.btn-lk {
+	font-family: FontAwesome;
+}
+
+.btn-fb:before {
+	content: '\f09a'
+}
+
+.btn-tw:before {
+	content: '\f099'
+}
+
+.btn-lk:before {
+	content: '\f0e1'
+}
+
+
+/* Toggle Button */
+
+.cm-toggle {
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: transparent;
+	position: relative;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+}
+
+.cm-toggle:after {
+	content: '';
+	width: 36px;
+	height: 14px;
+	display: inline-block;
+	background: rgba(255, 255, 255, 0.45);
+	border-radius: 18px;
+	clear: both;
+}
+
+.cm-toggle:before {
+	content: '';
+	width: 18px;
+	height: 18px;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: -3px;
+	border-radius: 50%;
+	background: rgb(255, 255, 255);
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.cm-toggle:checked:before {
+	left: 18px;
+	box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.cm-toggle:checked:after {
+	background: #16a085;
+}
+
+.cm-toggle,
+.cm-toggle:before,
+.cm-toggle:after,
+.cm-toggle:checked:before,
+.cm-toggle:checked:after {
+	transition: ease .3s;
+	-webkit-transition: ease .3s;
+	-moz-transition: ease .3s;
+	-o-transition: ease .3s;
+}
+
+
+/* Submit Button */
+
+.cm-submit {
+	-webkit-appearance: none;
+	background: #EB3349;
+	/* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #F45C43, #EB3349);
+	/* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #F45C43, #EB3349);
+	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	padding: 10px 16px;
+	border: 0;
+	width: 100%;
+	border-radius: 16px;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-submit:focus {
+	outline: 0;
+}
+
+.cm-btn,
+.btn-submit {
+	-webkit-tap-highlight-color: transparent;
+	transition: .3s;
+	cursor: pointer;
+}
+
+. .cm-btn:hover,
+.cm-submit:hover {
+	opacity: 0.9;
+	transition: .3s;
+}
+
+
+/* Animation */
+
+@keyframes slideLeft {
+	from {
+		left: -100%;
+	}
+	to {
+		left: 100px;
+	}
+}
+
+
+/* Responsive PC view*/
+
+@media only screen and (min-width: 480px) {
+	body {
+		background: url('../img/couple.jpg') no-repeat;
+		background-size: cover;
+	}
+	.cm-login-form {
+		position: absolute;
+		top: 80px;
+		left: 100px;
+		width: 360px;
+		height: 460px;
+		z-index: 5;
+		box-shadow: 1px 1px 5px 1px rgba(255, 255, 255, 0.65);
+		position: relative;
+		background: rgba(255, 255, 255, 0.25);
+		border: 1px solid rgba(255, 255, 255, 0.65);
+		animation: slideLeft 1s ease forwards;
+		-webkit-animation: slideLeft 1s ease forwards;
+	}
+	/* Dim background effect */
+	.dim-overlay {
+		display: block;
+	}
+	.dim-overlay:before {
+		content: "";
+		background-color: rgba(0, 0, 0, .25);
+		height: 100vh;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		overflow: hidden;
+		z-index: 2;
+	}
+}
+</pre>
+                     </article>
+                     
+                     
+                     </main>
+        <footer class="credit">
+Coded with <span title="heart"></span> by Asif Mughal &copy; 2018 - <a href="https://www.codehim.com" rel="dofollow" title="Awesome Web Projects and Tutorials" target="_blank"> Codehim.com </a>
+      </footer>
+          
+                  
    </body>
 </html>
